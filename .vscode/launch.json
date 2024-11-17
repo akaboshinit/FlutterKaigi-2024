@@ -31,19 +31,6 @@
       ]
     },
     {
-      "name": "ticket-web-staging-debug-wasm",
-      "cwd": "apps/ticket_web",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "type": "dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--wasm",
-        "--dart-define-from-file=defines/staging.env"
-      ]
-    },
-    {
       "name": "ticket-web-production-debug-wasm",
       "cwd": "apps/ticket_web",
       "request": "launch",
@@ -69,18 +56,6 @@
       ]
     },
     {
-      "name": "ticket-web-staging-debug-canvaskit",
-      "cwd": "apps/ticket_web",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "type": "dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--dart-define-from-file=defines/staging.env"
-      ]
-    },
-    {
       "name": "ticket-web-production-debug-canvaskit",
       "cwd": "apps/ticket_web",
       "request": "launch",
@@ -91,48 +66,6 @@
         "8080",
         "--wasm",
         "--dart-define-from-file=defines/production.env"
-      ]
-    },
-    {
-      "name": "ticket-web-staging-debug",
-      "cwd": "apps/ticket_web",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "type": "dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--dart-define-from-file=defines/staging.env",
-        "-d",
-        "macos"
-      ]
-    },
-    {
-      "name": "ticket-web-development-debug",
-      "cwd": "apps/ticket_web",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "type": "dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--dart-define-from-file=defines/development.env",
-        "-d",
-        "macos"
-      ]
-    },
-    {
-      "name": "ticket-web-production-debug",
-      "cwd": "apps/ticket_web",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "type": "dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--dart-define-from-file=defines/production.env",
-        "-d",
-        "macos"
       ]
     },
     {
@@ -149,23 +82,6 @@
         "canvaskit",
         "--wasm",
         "--dart-define-from-file=defines/development.env"
-      ],
-      "type": "dart"
-    },
-    {
-      "name": "website-staging-canvaskit-wasm-debug",
-      "cwd": "apps/website",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--web-renderer",
-        // 何も指定してない場合 skwasm が指定されるが、なぜか開発環境だとリンクが期待通りに動作しない不具合が発生する
-        // そのため、現状 canvaskit を指定している
-        "canvaskit",
-        "--wasm",
-        "--dart-define-from-file=defines/staging.env"
       ],
       "type": "dart"
     },
@@ -201,20 +117,6 @@
       "type": "dart"
     },
     {
-      "name": "website-staging-canvaskit-debug",
-      "cwd": "apps/website",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--web-renderer",
-        "canvaskit",
-        "--dart-define-from-file=defines/staging.env"
-      ],
-      "type": "dart"
-    },
-    {
       "name": "website-production-canvaskit-debug",
       "cwd": "apps/website",
       "request": "launch",
@@ -228,47 +130,5 @@
       ],
       "type": "dart"
     },
-    {
-      "name": "website-development-debug",
-      "cwd": "apps/website",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "type": "dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--dart-define-from-file=defines/development.env",
-        "-d",
-        "macos"
-      ]
-    },
-    {
-      "name": "website-staging-debug",
-      "cwd": "apps/website",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "type": "dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--dart-define-from-file=defines/staging.env",
-        "-d",
-        "macos"
-      ]
-    },
-    {
-      "name": "website-production-debug",
-      "cwd": "apps/website",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "type": "dart",
-      "args": [
-        "--web-port",
-        "8080",
-        "--dart-define-from-file=defines/production.env",
-        "-d",
-        "macos"
-      ]
-    }
   ]
 }
