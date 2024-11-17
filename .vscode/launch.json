@@ -57,6 +57,43 @@
       ]
     },
     {
+      "name": "ticket-web-development-debug-canvaskit",
+      "cwd": "apps/ticket_web",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "args": [
+        "--web-port",
+        "8080",
+        "--dart-define-from-file=defines/development.env"
+      ]
+    },
+    {
+      "name": "ticket-web-staging-debug-canvaskit",
+      "cwd": "apps/ticket_web",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "args": [
+        "--web-port",
+        "8080",
+        "--dart-define-from-file=defines/staging.env"
+      ]
+    },
+    {
+      "name": "ticket-web-production-debug-canvaskit",
+      "cwd": "apps/ticket_web",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "args": [
+        "--web-port",
+        "8080",
+        "--wasm",
+        "--dart-define-from-file=defines/production.env"
+      ]
+    },
+    {
       "name": "ticket-web-staging-debug",
       "cwd": "apps/ticket_web",
       "request": "launch",
@@ -132,7 +169,6 @@
       ],
       "type": "dart"
     },
-
     {
       "name": "website-production-canvaskit-wasm-debug",
       "cwd": "apps/website",
@@ -146,6 +182,48 @@
         // そのため、現状 canvaskit を指定している
         "canvaskit",
         "--wasm",
+        "--dart-define-from-file=defines/production.env"
+      ],
+      "type": "dart"
+    },
+    {
+      "name": "website-development-canvaskit-debug",
+      "cwd": "apps/website",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--web-port",
+        "8080",
+        "--web-renderer",
+        "canvaskit",
+        "--dart-define-from-file=defines/development.env"
+      ],
+      "type": "dart"
+    },
+    {
+      "name": "website-staging-canvaskit-debug",
+      "cwd": "apps/website",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--web-port",
+        "8080",
+        "--web-renderer",
+        "canvaskit",
+        "--dart-define-from-file=defines/staging.env"
+      ],
+      "type": "dart"
+    },
+    {
+      "name": "website-production-canvaskit-debug",
+      "cwd": "apps/website",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--web-port",
+        "8080",
+        "--web-renderer",
+        "canvaskit",
         "--dart-define-from-file=defines/production.env"
       ],
       "type": "dart"
