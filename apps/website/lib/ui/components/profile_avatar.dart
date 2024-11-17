@@ -1,4 +1,5 @@
 import 'package:common_data/speaker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ProfileAvatar extends StatelessWidget {
@@ -15,7 +16,7 @@ class ProfileAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     final errorAvatar = DecoratedBox(
       decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.7),
+        color: Colors.black.withOpacity(0.7),
       ),
       child: Padding(
         padding: const EdgeInsets.all(4),
@@ -36,5 +37,12 @@ class ProfileAvatar extends StatelessWidget {
         errorBuilder: (context, error, stackTrace) => errorAvatar,
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<Speaker>('profile', profile));
+    properties.add(DoubleProperty('size', size));
   }
 }

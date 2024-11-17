@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:ticket_web/core/util/full_screen_loading.dart';
@@ -44,7 +45,7 @@ class TicketCardAppBar extends ConsumerWidget {
                       Text(
                         i18n.ticketPage.editFields.name.title,
                         style: textTheme.bodySmall?.copyWith(
-                          color: Colors.white.withValues(alpha: 0.5),
+                          color: Colors.white.withOpacity(0.5),
                         ),
                       ),
                       Text(
@@ -88,6 +89,21 @@ class TicketCardAppBar extends ConsumerWidget {
               ),
           ],
         ),
+      ),
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('name', name));
+    properties.add(DiagnosticsProperty<bool>('isEditable', isEditable));
+    properties
+        .add(ObjectFlagProperty<void Function()>.has('onUpdated', onUpdated));
+    properties.add(
+      ObjectFlagProperty<void Function(String p1)>.has(
+        'onUpdateFailed',
+        onUpdateFailed,
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_web/feature/auth/ui/sign_in_with_google_button.dart';
 import 'package:ticket_web/gen/i18n/strings.g.dart';
@@ -28,7 +29,7 @@ class LoginBeforePurchaseCard extends StatelessWidget {
         Text(
           i18n.homePage.tickets.ticketManagedByGoogleAccount,
           style: textTheme.bodyMedium?.copyWith(
-            color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+            color: theme.colorScheme.onSurface.withOpacity(0.7),
           ),
         ),
         const SizedBox(height: 8),
@@ -55,6 +56,17 @@ class LoginBeforePurchaseCard extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: child,
         ),
+      ),
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+      ObjectFlagProperty<VoidCallback?>.has(
+        'onSignInPressed',
+        onSignInPressed,
       ),
     );
   }

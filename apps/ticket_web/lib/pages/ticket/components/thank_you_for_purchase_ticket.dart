@@ -1,4 +1,5 @@
 import 'package:common_data/ticket.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_web/core/extension/is_mobile.dart';
 import 'package:ticket_web/gen/i18n/strings.g.dart';
@@ -53,12 +54,17 @@ class ThankYouForPurchaseTicketCard extends StatelessWidget {
             ),
             style: (isMobile ? textTheme.bodySmall : textTheme.bodyMedium)
                 ?.copyWith(
-              color:
-                  theme.colorScheme.onPrimaryContainer.withValues(alpha: 0.7),
+              color: theme.colorScheme.onPrimaryContainer.withOpacity(0.7),
             ),
           ),
         ],
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(EnumProperty<TicketType>('ticketType', ticketType));
   }
 }

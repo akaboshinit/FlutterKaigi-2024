@@ -137,7 +137,7 @@ class _LanguageText extends StatelessWidget {
       style: defaultStyle!.copyWith(
         fontWeight: isSelected ? FontWeight.bold : null,
         color:
-            theme.colorScheme.onSurface.withValues(alpha: isSelected ? 1 : 0.5),
+            theme.colorScheme.onSurface.withOpacity(isSelected ? 1 : 0.5),
         fontFamily: FontFamily.poppins,
         fontSize: (defaultStyle.fontSize ?? 16) * (isSelected ? 1.0 : 0.8),
       ),

@@ -35,7 +35,7 @@ class InformationForStudents extends StatelessWidget {
               Text(
                 i18n.homePage.tickets.student.description,
                 style: theme.textTheme.bodyMedium?.copyWith(
-                  color: colorScheme.onTertiaryContainer.withValues(alpha: 0.7),
+                  color: colorScheme.onTertiaryContainer.withOpacity(0.7),
                 ),
               ),
             ],

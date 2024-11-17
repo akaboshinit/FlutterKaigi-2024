@@ -64,7 +64,7 @@ class GeneralTicketCard extends HookWidget {
               styleSheet: MarkdownStyleSheet.fromTheme(theme).copyWith(
                 p: (isMobile ? textTheme.bodyMedium : textTheme.bodyLarge)
                     ?.copyWith(
-                  color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                  color: theme.colorScheme.onSurface.withOpacity(0.7),
                 ),
               ),
               softLineBreak: true,
@@ -86,7 +86,7 @@ class GeneralTicketCard extends HookWidget {
               i18n.homePage.tickets.invitation.description,
               style: (isMobile ? textTheme.bodyMedium : textTheme.bodyLarge)
                   ?.copyWith(
-                color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                color: theme.colorScheme.onSurface.withOpacity(0.7),
               ),
             ),
             const SizedBox(height: 16),

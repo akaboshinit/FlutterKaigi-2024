@@ -1,7 +1,5 @@
-import 'package:conference_2024_website/core/router/router.dart';
 import 'package:conference_2024_website/gen/i18n/strings.g.dart';
 import 'package:conference_2024_website/ui/components/button/app_button.dart';
-import 'package:conference_2024_website/ui/pages/session/session_page.dart';
 import 'package:conference_2024_website/ui/theme/extension/theme_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
