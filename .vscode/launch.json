@@ -121,6 +121,46 @@
       "type": "dart"
     },
     {
+      "name": "website-development-wasm-debug",
+      "cwd": "apps/website",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--web-port",
+        "8080",
+        "--wasm",
+        "--dart-define-from-file=defines/development.env"
+      ],
+      "type": "dart"
+    },
+    {
+      "name": "website-production-wasm-debug",
+      "cwd": "apps/website",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--web-port",
+        "8080",
+        "--wasm",
+        "--dart-define-from-file=defines/production.env"
+      ],
+      "type": "dart"
+    },
+    {
+      "name": "website-production-wasm-release",
+      "cwd": "apps/website",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "release",
+      "args": [
+        "--web-port",
+        "8080",
+        "--wasm",
+        "--dart-define-from-file=defines/production.env"
+      ],
+      "type": "dart"
+    },
+    {
       "name": "website-development-canvaskit-debug",
       "cwd": "apps/website",
       "request": "launch",
