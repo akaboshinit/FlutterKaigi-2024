@@ -13,19 +13,22 @@ build-canvaskit:
 	rm -rf public/canvaskit
 	mkdir -p public/canvaskit
 	rm -rf build
-	flutter build web --release --dart-define-from-file=defines/production.env --web-renderer canvaskit
+	flutter build web --release --dart-define-from-file=defines/production.env --dart-define=lastBuildTime=$(shell date +"%Y/%m/%d-%H:%M") \
+		--web-renderer canvaskit
 	cp -r build/web/* public/canvaskit/
 
 build-wasm-canvaskit-dual:
 	rm -rf public/wasm-canvaskit-dual
 	mkdir -p public/wasm-canvaskit-dual
 	rm -rf build
-	flutter build web --release --dart-define-from-file=defines/production.env --wasm
+	flutter build web --release --dart-define-from-file=defines/production.env --dart-define=lastBuildTime=$(shell date +"%Y/%m/%d-%H:%M") \
+		--wasm
 	cp -r build/web/* public/wasm-canvaskit-dual/
 
 build-wasm:
 	rm -rf public/wasm
 	mkdir -p public/wasm
 	rm -rf build
-	flutter build web --release --dart-define-from-file=defines/production.env --web-renderer skwasm
+	flutter build web --release --dart-define-from-file=defines/production.env --dart-define=lastBuildTime=$(shell date +"%Y/%m/%d-%H:%M") \
+		--web-renderer skwasm
 	cp -r build/web/* public/wasm/

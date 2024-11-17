@@ -32,6 +32,9 @@ class App extends ConsumerWidget {
                 child!,
                 Column(
                   children: [
+                    const Text(
+                      'lastBuildTime: ${const String.fromEnvironment('lastBuildTime')}',
+                    ),
                     const Text('kIsWasm: $kIsWasm'),
                     InkWell(
                       onTap: () {
