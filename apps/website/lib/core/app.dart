@@ -4,6 +4,7 @@ import 'package:conference_2024_website/ui/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:performance/performance.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -21,6 +22,12 @@ class App extends ConsumerWidget {
       routerConfig: router,
       theme: lightTheme(),
       themeMode: ThemeMode.light,
+      builder: (context, child) {
+        return CustomPerformanceOverlay(
+          alignment: Alignment.bottomRight,
+          child: child!,
+        );
+      },
     );
   }
 }
