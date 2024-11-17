@@ -1,6 +1,7 @@
 import 'package:conference_2024_website/core/router/router.dart';
 import 'package:conference_2024_website/gen/i18n/strings.g.dart';
 import 'package:conference_2024_website/ui/theme/theme.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -23,9 +24,26 @@ class App extends ConsumerWidget {
       theme: lightTheme(),
       themeMode: ThemeMode.light,
       builder: (context, child) {
-        return CustomPerformanceOverlay(
-          alignment: Alignment.bottomRight,
-          child: child!,
+        return Scaffold(
+          body: CustomPerformanceOverlay(
+            alignment: Alignment.bottomRight,
+            child: Stack(
+              children: [
+                child!,
+                Column(
+                  children: [
+                    const Text('kIsWasm: $kIsWasm'),
+                    InkWell(
+                      onTap: () {
+                        throw UnimplementedError();
+                      },
+                      child: const Text('throw()'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         );
       },
     );

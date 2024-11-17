@@ -1,5 +1,7 @@
+import 'package:conference_2024_website/core/router/router.dart';
 import 'package:conference_2024_website/gen/i18n/strings.g.dart';
 import 'package:conference_2024_website/ui/components/button/app_button.dart';
+import 'package:conference_2024_website/ui/pages/session/session_page.dart';
 import 'package:conference_2024_website/ui/theme/extension/theme_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -44,10 +46,8 @@ class SessionSection extends StatelessWidget {
                   width: 480,
                   child: AppButton.secondary(
                     label: Text(i18n.session.link),
-                    onPressed: () async {
-                      throw UnimplementedError();
-                      // await const SessionRoute().push<void>(context);
-                    },
+                    onPressed: () async =>
+                        const SessionRoute().push<void>(context),
                   ),
                 ),
               ],
