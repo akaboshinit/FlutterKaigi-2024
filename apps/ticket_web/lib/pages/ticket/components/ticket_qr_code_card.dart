@@ -1,4 +1,5 @@
 import 'package:common_data/ticket.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -80,7 +81,7 @@ class TicketQrCodeCard extends HookConsumerWidget {
               textAlign: TextAlign.center,
               style: (isMobile ? textTheme.bodySmall : textTheme.bodyMedium)
                   ?.copyWith(
-                color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                color: theme.colorScheme.onSurface.withOpacity(0.7),
               ),
             ),
             const SizedBox(height: 8),
@@ -118,5 +119,11 @@ class TicketQrCodeCard extends HookConsumerWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<Ticket>('ticket', ticket));
   }
 }

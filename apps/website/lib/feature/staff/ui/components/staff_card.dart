@@ -53,7 +53,7 @@ class StaffCard extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFFA8A8A8).withValues(alpha: 0.25),
+              color: const Color(0xFFA8A8A8).withOpacity(0.25),
               blurRadius: 4,
               offset: const Offset(2, 2),
             ),

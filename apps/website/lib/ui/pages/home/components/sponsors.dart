@@ -205,7 +205,7 @@ class _SponsorCard extends ConsumerWidget {
             color: Colors.white,
             boxShadow: [
               CustomBoxShadow(
-                color: Colors.black.withValues(alpha: 0.25),
+                color: Colors.black.withOpacity(0.25),
                 offset: const Offset(2, 2),
                 blurRadius: 4,
                 blurStyle: BlurStyle.outer,

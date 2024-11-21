@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_web/gen/i18n/strings.g.dart';
 
@@ -41,8 +42,7 @@ class AlreadyPurchasedCard extends StatelessWidget {
             Text(
               i18n.homePage.tickets.alreadyPurchasedCard.description,
               style: textTheme.bodyMedium?.copyWith(
-                color:
-                    theme.colorScheme.onPrimaryContainer.withValues(alpha: 0.7),
+                color: theme.colorScheme.onPrimaryContainer.withOpacity(0.7),
               ),
             ),
             const SizedBox(height: 16),
@@ -59,6 +59,17 @@ class AlreadyPurchasedCard extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+      ObjectFlagProperty<VoidCallback?>.has(
+        'onTicketPagePressed',
+        onTicketPagePressed,
       ),
     );
   }

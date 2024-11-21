@@ -5,8 +5,8 @@ version: 0.0.1
 homepage: "https://github.com/FlutterKaigi/2024/tree/main/packages/app/features/session"
 
 environment:
-  sdk: ^3.6.0-216.1.beta
-  flutter: ^3.26.0-0.1.pre
+  sdk: ^3.5.4
+  flutter: ^3.24.4-stable
 
 dependencies:
   add_2_calendar: ^3.0.1
@@ -16,7 +16,7 @@ dependencies:
     path: ../../cores/designsystem
   app_cores_settings:
     path: ../../cores/settings
-  collection: ^1.19.0
+  collection: ^1.18.0
   common_data:
     path: ../../../common/data
   flutter:

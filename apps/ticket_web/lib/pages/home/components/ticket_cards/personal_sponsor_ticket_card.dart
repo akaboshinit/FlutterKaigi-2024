@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:intl/intl.dart';
@@ -55,7 +56,7 @@ class PersonalSponsorTicketCard extends StatelessWidget {
                   i18n.homePage.tickets.personalSponsor.description.join('\n'),
               styleSheet: MarkdownStyleSheet.fromTheme(theme).copyWith(
                 p: textTheme.bodyLarge?.copyWith(
-                  color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                  color: theme.colorScheme.onSurface.withOpacity(0.7),
                 ),
               ),
               softLineBreak: true,
@@ -82,6 +83,18 @@ class PersonalSponsorTicketCard extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<bool>('isLoggedIn', isLoggedIn));
+    properties.add(
+      ObjectFlagProperty<VoidCallback?>.has(
+        'onPurchasePressed',
+        onPurchasePressed,
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:common_data/sponsor.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class SponsorLogo extends StatelessWidget {
@@ -17,7 +18,7 @@ class SponsorLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     final errorLogo = DecoratedBox(
       decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.1),
+        color: Colors.black.withOpacity(0.1),
         borderRadius: BorderRadius.circular(4),
       ),
       child: Padding(
@@ -40,5 +41,13 @@ class SponsorLogo extends StatelessWidget {
         errorBuilder: (context, error, stackTrace) => errorLogo,
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<SponsorV2>('sponsor', sponsor));
+    properties.add(DoubleProperty('height', height));
+    properties.add(ObjectFlagProperty<VoidCallback?>.has('onTap', onTap));
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_web/gen/i18n/strings.g.dart';
 
@@ -51,7 +52,7 @@ class VerifyPurchaseProcessingCard extends StatelessWidget {
               child: Text(
                 i18n.verifyPurchase.processingDescription,
                 style: theme.textTheme.bodyLarge?.copyWith(
-                  color: colorScheme.onSurface.withValues(alpha: 0.7),
+                  color: colorScheme.onSurface.withOpacity(0.7),
                 ),
               ),
             ),
@@ -59,5 +60,11 @@ class VerifyPurchaseProcessingCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('stripeSessionId', stripeSessionId));
   }
 }

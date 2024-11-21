@@ -23,7 +23,7 @@ class ProfileAvatar extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final errorAvatar = DecoratedBox(
       decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.7),
+        color: Colors.black.withOpacity(0.7),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8),
