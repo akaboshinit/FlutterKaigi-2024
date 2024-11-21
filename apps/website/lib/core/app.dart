@@ -36,6 +36,9 @@ class App extends ConsumerWidget {
                       'lastBuildTime: ${const String.fromEnvironment('lastBuildTime')}',
                     ),
                     const Text('kIsWasm: $kIsWasm'),
+                    Text('isSkwasm: $isSkwasm'),
+                    Text('isCanvasKit : $isCanvasKit'),
+                    Text('isSkiaWeb: $isSkiaWeb'),
                     InkWell(
                       onTap: () {
                         throw UnimplementedError();
